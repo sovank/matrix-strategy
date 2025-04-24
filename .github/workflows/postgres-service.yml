@@ -1,0 +1,19 @@
+name: postgres check
+on:
+  pus:
+    branches:
+      - main
+jobs:
+  Services-block:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: user-admin
+          POSTGRES_PASSWORD: password-admin
+          POSTGRES_DB: db-admin
+    steps:
+      - name: 
