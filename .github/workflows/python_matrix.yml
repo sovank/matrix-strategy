@@ -1,13 +1,16 @@
 name: matrix strategy'
 on: 
-  pus:
+  push:
     branches:
       - main
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-      strategy:
-        matrix: 
-          os: [ubuntu-latest, macos-latest, windows-latest]
+    strategy:
+      matrix: 
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+    steps:
+      - name: Set up Python
+        run: python version
           
-  
