@@ -1,0 +1,13 @@
+name: matrix strategy'
+on: 
+  pus:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+      strategy:
+        matrix: 
+          os: [ubuntu-latest, macos-latest, windows-latest]
+          
+  
