@@ -12,5 +12,5 @@ jobs:
         python-version: ['3.9', '3.10', '3.11', '3.12']
     steps:
       - name: Set up Python
-        run: python version
+        run: install python 3.9
           
