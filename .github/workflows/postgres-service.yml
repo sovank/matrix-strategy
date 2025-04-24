@@ -16,4 +16,9 @@ jobs:
           POSTGRES_PASSWORD: password-admin
           POSTGRES_DB: db-admin
     steps:
-      - name: 
+      - name: check postgres
+        run: |
+          while ! nc -z localhost 5432; do
+            sleep 1
+          done
+          echo "PostgreSQL is ready"
